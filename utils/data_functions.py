@@ -1,3 +1,5 @@
+# Functions for cleaning and refining the data for display.
+
 
 # This function cleans a data frame that has first been imported using the cyryptoprices_data_import function for analysis and returns it. 
 # The data is expected to have a Close column, representing the closing prices for each Timestamp. 
@@ -16,3 +18,10 @@ def data_clean(pricedata):
     if pricedata.duplicated().sum() > 0:
         pricedata = bitstamp.drop_duplicates()
     return pricedata
+
+
+# This function returns the data with only the timestamp and close price columns.
+
+def data_slice_close(data):
+    data_slice = data.loc[:, "Close"]
+    return data_slice
