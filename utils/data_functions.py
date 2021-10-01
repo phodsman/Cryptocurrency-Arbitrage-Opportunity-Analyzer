@@ -25,3 +25,10 @@ def data_clean(pricedata):
 def data_slice_close(data):
     data_slice = data.loc[:, "Close"]
     return data_slice
+
+# This function plots a portion of the data sets, taking as input parameters the two data sets, the begin date, and end date. It expects bitstamp data to be the first parameter and coinbase data to be the second parameter.
+
+def plot_compare_for_date_range(bitstamp_sliced, coinbase_sliced, start_date, end_date):
+    bitstamp_sliced.loc[start_date : end_date].plot(legend=True, figsize=(20,8), title=f"Bitstamp vs Coinbase close prices {start_date} - {end_date}", color="#499C53", label="BTC close price per Bitstamp")
+    coinbase_sliced.loc[start_date : end_date].plot(legend=True, figsize=(20,8), color="#2151F5", label="BTC close price per Coinbase")
+    return
