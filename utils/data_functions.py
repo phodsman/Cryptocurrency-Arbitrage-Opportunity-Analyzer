@@ -11,7 +11,7 @@
 import pandas as pd
 
 def data_clean(pricedata):
-    if pricedata.isnull().sum().sum() > 0:
+    if pricedata.isnull().sum() > 0:
         pricedata = pricedata.dropna()
     pricedata.loc[:, "Close"] = pricedata.loc[:, "Close"].str.replace("$", "")
     pricedata.loc[:, "Close"] = pricedata.loc[:, "Close"].astype("float")
@@ -38,3 +38,7 @@ def plot_compare_for_date_range(bitstamp_sliced, coinbase_sliced, start_date, en
 def arbitrage_spread_for_date_range(bitstamp_sliced, coinbase_sliced, start_date, end_date):
     arbitrage_spread_for_range = bitstamp_sliced.loc[start_date : end_date] - coinbase_sliced.loc[start_date : end_date]
     return arbitrage_spread_for_range
+
+# def arbitrage_spread_positive_for_date_range(bitstamp_sliced, coinbase_sliced, start_date, end_date):
+#     arbitrage_spread_positive_for_range = bitstamp_sliced.loc[start_date : end_date] - coinbase_sliced.loc[start_date : end_date]
+#     return arbitrage_spread_positive_for_range
