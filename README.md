@@ -13,6 +13,9 @@ Before running the application please run:
 ## Usage
 Run the program ```crypto_arbitrage.ipynb``` inside jupyter lab.
 
+After running the cells leading up to where analysis begins to appear, it should display plots that look like this:
+[](https://github.com/phodsman/Cryptocurrency-Arbitrage-Opportunity-Analyzer/blob/main/Screenshot%202021-10-05%20135802.png?raw=true)
+
 ## Contributors
 This program was written by Preston Hodsman based on a request for analysis from Trilogy Education Services, a 2U, Inc.
 
