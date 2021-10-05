@@ -38,7 +38,3 @@ def plot_compare_for_date_range(bitstamp_sliced, coinbase_sliced, start_date, en
 def arbitrage_spread_for_date_range(bitstamp_sliced, coinbase_sliced, start_date, end_date):
     arbitrage_spread_for_range = bitstamp_sliced.loc[start_date : end_date] - coinbase_sliced.loc[start_date : end_date]
     return arbitrage_spread_for_range
-
-# def arbitrage_spread_positive_for_date_range(bitstamp_sliced, coinbase_sliced, start_date, end_date):
-#     arbitrage_spread_positive_for_range = bitstamp_sliced.loc[start_date : end_date] - coinbase_sliced.loc[start_date : end_date]
-#     return arbitrage_spread_positive_for_range
